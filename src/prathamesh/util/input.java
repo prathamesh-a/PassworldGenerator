@@ -21,6 +21,7 @@ public class input {
         this.includeLowercase = checkInput();
         print("Include uppercase letters? (e.g. ABCD)");
         this.includeUppercase = checkInput();
+        invalidInput();
     }
 
     private void print(String str){System.out.println(str);}
@@ -39,6 +40,16 @@ public class input {
             sc.next();
         }
         num = sc.nextInt();
+        while (!(num > 0)){
+            print("Password length must be more than 0!");
+            num = sc.nextInt();
+        }
         return num;
+    }
+    private void invalidInput(){
+        if (!(includeSymbols || includeNumbers || includeUppercase || includeLowercase)){
+            print("Select at least one option to get password.");
+            System.exit(0);
+        }
     }
 }
