@@ -29,6 +29,7 @@ public class input {
         String string = sc.next();
         while (!string.equalsIgnoreCase("yes") && !string.equalsIgnoreCase("no")){
             print("Invalid input! Type YES or NO");
+            sc.next();
             string = sc.next();
         }
         return string.equalsIgnoreCase("yes");
